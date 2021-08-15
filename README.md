@@ -4,6 +4,8 @@ This project contains a few different flavors of a Scala CLI application. They'r
 
 ## Basic
 
+[![asciicast](https://asciinema.org/a/oXqQzYiWuKeU4Znk6qKw5SKXO.svg)](https://asciinema.org/a/oXqQzYiWuKeU4Znk6qKw5SKXO)
+
 ### Usage
 
 `sbt "new daddykotex/scala-cli.g8 -d basic"`
