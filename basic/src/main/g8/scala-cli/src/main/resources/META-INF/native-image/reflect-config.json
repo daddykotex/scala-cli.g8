@@ -1,0 +1,17 @@
+[
+{
+  "name":"cats.effect.unsafe.IORuntimeCompanionPlatform",
+  "fields":[{"name":"0bitmap\$1", "allowUnsafeAccess":true}]
+},
+{
+  "name":"cats.effect.unsafe.WorkStealingThreadPool",
+  "fields":[{"name":"0bitmap\$1", "allowUnsafeAccess":true}]
+},
+{
+  "name":"java.lang.invoke.VarHandle"
+},
+{
+  "name":"sun.misc.Unsafe",
+  "allDeclaredFields":true
+}
+]
