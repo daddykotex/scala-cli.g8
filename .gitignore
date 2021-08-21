@@ -16,4 +16,4 @@ target
 .bsp/
 .credentials
 **/project/metals.sbt
-
+project/project
