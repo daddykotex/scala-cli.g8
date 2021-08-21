@@ -1,3 +1,5 @@
+package $package$
+
 import cats.effect.*
 import cats.implicits.*
 
@@ -6,9 +8,9 @@ import com.monovore.decline.effect._
 
 object Main
     extends CommandIOApp(
-      name = "scala-cli",
+      name = "$name$",
       header = "Simple CLI tool",
-      version = "0.0.x"
+      version = BuildInfo.version
     ) {
   override def main: Opts[IO[ExitCode]] =
     Opts.never

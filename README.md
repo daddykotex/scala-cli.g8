@@ -25,4 +25,5 @@ sbt plugins:
 * sbt-scalafmt
 * sbt-scalafix
 * sbt-native-image
+* sbt-buildinfo
 

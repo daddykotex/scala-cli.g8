@@ -2,7 +2,7 @@ lazy val root = (project in file("."))
   .settings(
     inThisBuild(
       List(
-        organization := "org.acme",
+        organization := "$package$",
         scalaVersion := "3.0.1"
       )
     ),
@@ -49,9 +49,10 @@ lazy val allNativeImageOptions = Def.settings(
 
 lazy val scalaCli = (project in file("scala-cli"))
   .enablePlugins(NativeImagePlugin)
+  .enablePlugins(BuildInfoPlugin)
   .settings(
     name := "scala-cli",
-    Compile / mainClass := Some("Main"),
+    Compile / mainClass := Some("$package$.Main"),
     libraryDependencies ++= Seq(
       "org.typelevel" %% "cats-effect" % catsVersion,
       "com.monovore" %% "decline" % declineVersion,
@@ -60,6 +61,8 @@ lazy val scalaCli = (project in file("scala-cli"))
       "org.typelevel" %% "munit-cats-effect-3" % "1.0.5" % Test
     ),
     run / fork := true,
-    testFrameworks += new TestFramework("munit.Framework")
+    testFrameworks += new TestFramework("munit.Framework"),
+    buildInfoKeys := Seq[BuildInfoKey](name, version, scalaVersion, sbtVersion),
+    buildInfoPackage := organization.value
   )
   .settings(allNativeImageOptions)
