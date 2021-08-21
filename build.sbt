@@ -4,8 +4,14 @@
 lazy val scalaVersions = Seq("2.12.14")
 lazy val root = project
   .in(file("."))
+  .disablePlugins(Giter8Plugin)
+  .settings(name := "scala3-template")
+  .aggregate(basic)
+
+lazy val basic = project
+  .in(file("basic"))
   .settings(
-    name := "scala3-template",
+    name := "scala-cli-basic",
     Test / test := {
       val _ = (Test / g8Test).toTask("").value
     },
@@ -14,12 +20,8 @@ lazy val root = project
     crossScalaVersions := scalaVersions
   )
 
+
 ThisBuild / githubWorkflowJavaVersions := Seq("adopt@1.8", "adopt@1.11", "adopt@1.15")
 ThisBuild / githubWorkflowScalaVersions := scalaVersions
-ThisBuild / githubWorkflowBuildPostamble := Seq(
-  // This runs the template with the default parameters, and runs test within the templated app.
-  WorkflowStep.Run(List("sbt -Dfile.encoding=UTF8 -J-XX:ReservedCodeCacheSize=256M test")),
-  WorkflowStep.Run(List("pushd target/sbt-test/scala3-template/scripted && sbt run test && popd")),
-)
 ThisBuild / githubWorkflowPublishTargetBranches := Nil
 Global / onChangedBuildSource := ReloadOnSourceChanges

@@ -1,0 +1,5 @@
+> scalaCli/run
+> scalaCli/nativeImage
+
+$ exists scala-cli/target/native-image/scala-cli
+$ exec scala-cli/target/native-image/scala-cli -v
