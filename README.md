@@ -2,6 +2,8 @@
 
 This project contains a few different flavors of a Scala CLI application. They're built with Scala 3 and can generate standalone executable using Graal Native Image.
 
+[![Continuous Integration](https://github.com/daddykotex/scala-cli.g8/actions/workflows/ci.yml/badge.svg)](https://github.com/daddykotex/scala-cli.g8/actions/workflows/ci.yml)
+
 ## Basic
 
 [![asciicast](https://asciinema.org/a/oXqQzYiWuKeU4Znk6qKw5SKXO.svg)](https://asciinema.org/a/oXqQzYiWuKeU4Znk6qKw5SKXO)
