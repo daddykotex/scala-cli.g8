@@ -1,4 +1,5 @@
 > scalaCli/run
+> scalaCli/githubWorkflowGenerate
 > scalaCli/nativeImage
 
 $ exists scala-cli/target/native-image/scala-cli

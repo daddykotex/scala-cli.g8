@@ -1,9 +1,13 @@
+lazy val theScalaVersion = "3.0.1"
 lazy val root = (project in file("."))
   .settings(
     inThisBuild(
       List(
         organization := "$package$",
-        scalaVersion := "3.0.1"
+        scalaVersion := theScalaVersion,
+        githubWorkflowJavaVersions := Seq("adopt@1.8", "adopt@1.11", "adopt@1.15"),
+        githubWorkflowScalaVersions := Seq(theScalaVersion),
+        githubWorkflowPublishTargetBranches := Seq.empty
       )
     ),
     name := "scala-cli"
